@@ -15,7 +15,7 @@ public class Teacher extends Person {
         return super.introduce() + " I am a " + getJob() + ".";
     }
 
-    void receiveMessage(String message) {
-        System.out.println(message);
+    String receiveMessage(String message) {
+        return message;
     }
 }
