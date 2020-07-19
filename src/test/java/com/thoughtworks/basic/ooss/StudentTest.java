@@ -10,7 +10,8 @@ public class StudentTest {
     public void should_return_introduce_message_given_student_with_name_and_age() {
         //given
         Student tom = new Student("Tom", 21);
-        tom.setClassNumber(2);
+        Klass klass = new Klass(2);
+        tom.setKlass(klass);
 
         //when
         String message = tom.introduce();
