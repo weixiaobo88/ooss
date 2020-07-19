@@ -34,4 +34,8 @@ public class Student extends Person {
         setKlass(klass);
         klass.inform(message);
     }
+
+    void receiveMessage(String message) {
+        System.out.println(message);
+    }
 }

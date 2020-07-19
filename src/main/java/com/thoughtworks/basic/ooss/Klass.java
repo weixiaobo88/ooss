@@ -18,6 +18,8 @@ class Klass {
     }
 
     void inform(String message) {
+        students.forEach(student -> student.receiveMessage(message));
+        teacher.receiveMessage(message);
         this.message = message;
     }
 
