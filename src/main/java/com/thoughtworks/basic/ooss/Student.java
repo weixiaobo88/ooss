@@ -18,15 +18,20 @@ public class Student extends Person {
 
     void updateTo(String name) {
         super.setName(name);
-        String message = buildUpdateNameMessage();
-        klass.notify(message);
+        String message = buildUpdateNameMessage(klass);
+        klass.inform(message);
     }
 
-    private String buildUpdateNameMessage() {
-        return super.introduce() + "I am a Student of Class " + klass.getKlassNumber() + "now.";
+    private String buildUpdateNameMessage(Klass klass) {
+        return super.introduce() + " I am a student of Class " + klass.getKlassNumber() + " now.";
     }
 
-    String receiveMessage(String message) {
-        return message;
+    void updateKlassTo(Klass klass) {
+        String message = buildUpdateNameMessage(klass);
+        this.klass.inform(message);
+
+        this.klass.remove(this);
+        setKlass(klass);
+        klass.inform(message);
     }
 }

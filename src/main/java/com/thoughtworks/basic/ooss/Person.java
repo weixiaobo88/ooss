@@ -13,7 +13,7 @@ class Person {
         return "My name is " + getName() +". I am " + getAge() + " years old.";
     }
 
-    private String getName() {
+    String getName() {
         return name;
     }
 
