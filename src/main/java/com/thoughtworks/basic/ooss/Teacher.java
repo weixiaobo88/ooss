@@ -1,6 +1,6 @@
 package com.thoughtworks.basic.ooss;
 
-public class Teacher extends Person {
+public class Teacher extends Person implements KlassObserver {
     private String job = "Teacher";
     private String message;
 
@@ -16,7 +16,8 @@ public class Teacher extends Person {
         return super.introduce() + " I am a " + getJob() + ".";
     }
 
-    void receiveMessage(String message) {
+    @Override
+    public void receiveMessage(String message) {
         this.message = message;
     }
 
