@@ -1,5 +1,7 @@
-package com.thoughtworks.basic;
+package com.thoughtworks.basic.example;
 
+import com.thoughtworks.basic.example.Dependency;
+import com.thoughtworks.basic.example.HelloWorld;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
