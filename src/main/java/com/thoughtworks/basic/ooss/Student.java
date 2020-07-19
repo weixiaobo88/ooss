@@ -14,7 +14,7 @@ public class Student extends Person implements KlassObserver {
 
     void setKlass(Klass klass) {
         this.klass = klass;
-        klass.add(this);
+        klass.register(this);
     }
 
     void updateTo(String name) {
@@ -30,7 +30,7 @@ public class Student extends Person implements KlassObserver {
     void updateKlassTo(Klass klass) {
         String message = buildUpdateNameMessage(klass);
         this.klass.notify(message);
-        this.klass.remove(this);
+        this.klass.unRegister(this);
 
         setKlass(klass);
         klass.notify(message);
