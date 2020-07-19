@@ -2,6 +2,7 @@ package com.thoughtworks.basic.ooss;
 
 public class Student extends Person {
     private Klass klass;
+    private String message;
 
     public Student(String name, int age) {
         super(name, age);
@@ -19,7 +20,7 @@ public class Student extends Person {
     void updateTo(String name) {
         super.setName(name);
         String message = buildUpdateNameMessage(klass);
-        klass.inform(message);
+        klass.notify(message);
     }
 
     private String buildUpdateNameMessage(Klass klass) {
@@ -28,14 +29,18 @@ public class Student extends Person {
 
     void updateKlassTo(Klass klass) {
         String message = buildUpdateNameMessage(klass);
-        this.klass.inform(message);
-
+        this.klass.notify(message);
         this.klass.remove(this);
+
         setKlass(klass);
-        klass.inform(message);
+        klass.notify(message);
     }
 
-    String receiveMessage(String message) {
+    void receiveMessage(String message) {
+        this.message = message;
+    }
+
+    String getNotifyMessage() {
         return message;
     }
 }

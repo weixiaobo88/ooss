@@ -7,7 +7,6 @@ class Klass {
     private int number;
     private List<Student> students = new ArrayList<>();
     private Teacher teacher;
-    private String message;
 
     Klass(int number) {
         this.number = number;
@@ -17,10 +16,9 @@ class Klass {
         return number;
     }
 
-    void inform(String message) {
+    void notify(String message) {
         students.forEach(student -> student.receiveMessage(message));
         teacher.receiveMessage(message);
-        this.message = message;
     }
 
     void add(Student student) {
@@ -33,9 +31,5 @@ class Klass {
 
     void remove(Student student) {
         students.removeIf(existedStudent -> existedStudent.getName().equals(student.getName()));
-    }
-
-    String getInformMessage() {
-        return this.message;
     }
 }

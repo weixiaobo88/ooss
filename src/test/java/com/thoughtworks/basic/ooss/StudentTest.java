@@ -38,7 +38,8 @@ public class StudentTest {
         //then
         String expected = "My name is Tim. I am 21 years old. I am a student of Class 2 now.";
 
-        assertThat(klass.getInformMessage(), is(expected));
+        assertThat(mike.getNotifyMessage(), is(expected));
+        assertThat(matt.getNotifyMessage(), is(expected));
     }
 
     @Test
@@ -63,7 +64,10 @@ public class StudentTest {
 
         //then
         String expected = "My name is Tom. I am 21 years old. I am a student of Class 2 now.";
-        assertThat(klass1.getInformMessage(), is(expected));
-        assertThat(klass2.getInformMessage(), is(expected));
+
+        assertThat(mike.getNotifyMessage(), is(expected));
+        assertThat(lily.getNotifyMessage(), is(expected));
+        assertThat(matt.getNotifyMessage(), is(expected));
+        assertThat(johnny.getNotifyMessage(), is(expected));
     }
 }
