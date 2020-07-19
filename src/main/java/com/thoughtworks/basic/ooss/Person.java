@@ -1,7 +1,7 @@
 package com.thoughtworks.basic.ooss;
 
 class Person {
-    private final String name;
+    private String name;
     private final int age;
 
     Person(String name, int age) {
@@ -19,5 +19,9 @@ class Person {
 
     private int getAge() {
         return age;
+    }
+
+    protected void setName(String name) {
+        this.name = name;
     }
 }

@@ -2,7 +2,6 @@ package com.thoughtworks.basic.ooss;
 
 public class Teacher extends Person {
     private String job = "Teacher";
-    private Klass klass;
 
     public Teacher(String name, int age) {
         super(name, age);
@@ -12,11 +11,11 @@ public class Teacher extends Person {
         return job;
     }
 
-    void assignTo(Klass klass) {
-        this.klass = klass;
-    }
-
     String introduce() {
         return super.introduce() + " I am a " + getJob() + ".";
+    }
+
+    String receiveMessage(String message) {
+        return message;
     }
 }

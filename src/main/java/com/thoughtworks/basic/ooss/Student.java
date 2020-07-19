@@ -13,5 +13,20 @@ public class Student extends Person {
 
     void setKlass(Klass klass) {
         this.klass = klass;
+        klass.add(this);
+    }
+
+    void updateTo(String name) {
+        super.setName(name);
+        String message = buildUpdateNameMessage();
+        klass.notify(message);
+    }
+
+    private String buildUpdateNameMessage() {
+        return super.introduce() + "I am a Student of Class " + klass.getKlassNumber() + "now.";
+    }
+
+    String receiveMessage(String message) {
+        return message;
     }
 }
