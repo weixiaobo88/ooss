@@ -23,12 +23,16 @@ class Klass {
 
     void add(Student student) {
         students.add(student);
-        observers.add(student);
+        register(student);
     }
 
     void assign(Teacher teacher) {
         this.teacher = teacher;
-        observers.add(teacher);
+        register(teacher);
+    }
+
+    private void register(KlassObserver observer) {
+        observers.add(observer);
     }
 
     void remove(Student student) {
